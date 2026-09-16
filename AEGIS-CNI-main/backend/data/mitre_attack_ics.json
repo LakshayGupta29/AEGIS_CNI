@@ -1,0 +1,95 @@
+{
+  "mitre_attack_stages": [
+    {
+      "id": 0,
+      "name": "Normal Operations",
+      "tactic_id": null,
+      "description": "System operating within baseline behavioral parameters",
+      "severity": 0,
+      "color": "#22c55e"
+    },
+    {
+      "id": 1,
+      "name": "Initial Access",
+      "tactic_id": "TA0108",
+      "description": "Adversary gains initial entry through spear phishing, exposed service exploitation, or compromised supply chain",
+      "severity": 1,
+      "color": "#eab308",
+      "techniques": ["T0819", "T0866", "T0862"]
+    },
+    {
+      "id": 2,
+      "name": "Execution",
+      "tactic_id": "TA0104",
+      "description": "Adversary executes malicious code on target systems via scripting engines or native OS tools",
+      "severity": 2,
+      "color": "#f97316",
+      "techniques": ["T0807", "T0853", "T0863"]
+    },
+    {
+      "id": 3,
+      "name": "Persistence",
+      "tactic_id": "TA0110",
+      "description": "Adversary establishes foothold through scheduled tasks, registry modifications, or firmware implants",
+      "severity": 3,
+      "color": "#f97316",
+      "techniques": ["T0839", "T0857"]
+    },
+    {
+      "id": 4,
+      "name": "Evasion",
+      "tactic_id": "TA0103",
+      "description": "Adversary disables logging, masquerades processes, or uses rootkits to avoid detection",
+      "severity": 4,
+      "color": "#ef4444",
+      "techniques": ["T0820", "T0849", "T0851"]
+    },
+    {
+      "id": 5,
+      "name": "Discovery",
+      "tactic_id": "TA0102",
+      "description": "Adversary enumerates network topology, running services, connected devices, and user accounts",
+      "severity": 5,
+      "color": "#ef4444",
+      "techniques": ["T0840", "T0842", "T0846"]
+    },
+    {
+      "id": 6,
+      "name": "Lateral Movement",
+      "tactic_id": "TA0109",
+      "description": "Adversary moves to additional systems using stolen credentials, remote services, or exploitation of trust relationships",
+      "severity": 6,
+      "color": "#dc2626",
+      "techniques": ["T0812", "T0867", "T0886"]
+    },
+    {
+      "id": 7,
+      "name": "Impact",
+      "tactic_id": "TA0105",
+      "description": "Adversary executes final objective: data exfiltration, service disruption, or physical process manipulation",
+      "severity": 7,
+      "color": "#991b1b",
+      "techniques": ["T0826", "T0827", "T0831", "T0882"]
+    }
+  ],
+  "node_types": {
+    "process": {"color": "#60a5fa", "shape": "circle"},
+    "file": {"color": "#34d399", "shape": "square"},
+    "socket": {"color": "#f472b6", "shape": "triangle"},
+    "user": {"color": "#fbbf24", "shape": "diamond"},
+    "registry": {"color": "#a78bfa", "shape": "hexagon"},
+    "alert": {"color": "#ef4444", "shape": "star"}
+  },
+  "edge_types": {
+    "fork": "Process spawned child process",
+    "exec": "Process executed binary",
+    "read": "Process read file",
+    "write": "Process wrote to file",
+    "connect": "Process opened network connection",
+    "recv": "Process received data from socket",
+    "send": "Process sent data via socket",
+    "auth": "User authenticated to service",
+    "modify_reg": "Process modified registry key",
+    "inject": "Process injected code into another process"
+  }
+}
